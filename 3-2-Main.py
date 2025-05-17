@@ -29,3 +29,4 @@ for product in products:
 for product in (all_products):
     prix = all_products[product]['prix']*1.2
     all_products[product]['prix'] = prix
+    print(f'{all_products[product]['prix']}$')
