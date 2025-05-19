@@ -32,5 +32,12 @@ for product in products:
 # Conversion de chaque prix en dollar
 for product in (all_products):
     prix = all_products[product]['prix']*1.2
-    all_products[product]['prix'] = prix
-    print(f'{all_products[product]['prix']}$')
+    all_products[product]['prix_converti'] = prix
+    
+# Print de chaque produit avec sa description, son prix original et son prix converti en dollar
+for product in (all_products):
+    print(product)
+    print(f"Description:", all_products[product]['description'])
+    print(f"Prix en euros:", all_products[product]['prix'],'€')
+    print(f"Prix en dollars:", all_products[product]['prix_converti'],'$')
+    print()
