@@ -43,6 +43,9 @@ for product in (all_products):
     print()
 
 with open('3-3-data.csv', 'w') as fichier_csv:
+
     writer = csv.writer(fichier_csv, delimiter = ",")
     writer.writerow(all_products[product])
-    writer.writerow(all_products[product]['prix_converti'])
+    
+for product in all_products:
+    print(all_products[product]['prix_converti'])

@@ -40,3 +40,7 @@ for product in (all_products):
     print(f"Prix en euros:", all_products[product]['prix'],'€')
     print(f"Prix en dollars:", all_products[product]['prix_converti'],'$')
     print()
+
+for product in all_products:
+    print(all_products[product]['prix_converti'])
+      
