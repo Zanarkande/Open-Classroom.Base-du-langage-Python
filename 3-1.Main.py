@@ -3,8 +3,8 @@
 
 import operations
 
-a = input('Entrez votre premier nombre:')
-b = input('Entrez votre deuxième nombre:')
+a = input('Entrez votre premier nombre: ')
+b = input('Entrez votre deuxième nombre: ')
 
 try:
     float(a)

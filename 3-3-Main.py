@@ -17,18 +17,18 @@ products = soup.find_all("li")
 
 for product in products:
     # Extractin du nom du produit et de son prix
-    name_products = product.find("h2").string
-    price_products = product.find("p", class_="price").string
+    name_product = product.find("h2").string
+    price_product = product.find("p", class_="price").string
     
     # Création d'une liste afin d'extraire la valeur numérique du prix
-    price_list = price_products.split(":")
-    all_products[name_products] = {"prix": float(price_list[1].replace('€', '').replace(' ', ''))}
+    price_list = price_product.split(":")
+    all_products[name_product] = {"prix": float(price_list[1].replace('€', '').replace(' ', ''))}
     
     # Création d'une liste afin d'extraire le texte de la description de chaque produit
     description_product = product.find_all('p')[-1].string
     description_list = description_product.split(':')
     description_clean = description_list[1][1:]
-    all_products[name_products]['description'] = description_clean
+    all_products[name_product]['description'] = description_clean
 
 # Conversion de chaque prix en dollar
 for product in (all_products):
@@ -43,7 +43,6 @@ for product in (all_products):
     print()
 
 with open('3-3-data.csv', 'w') as fichier_csv:
-
     writer = csv.writer(fichier_csv, delimiter = ",")
     writer.writerow(['Nom', 'Description', 'Prix (€)', 'Prix ($)'])
     for nom, infos in all_products.items():
